@@ -1,0 +1,196 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-main { font-weight: 700; }
+.nav-muted { opacity: 0.6; }
+
+/* HERO */
+.hero {
+  min-height: 80vh;
+  background-image: url("hero-rio.jpg");
+  color: #5ae049;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: #25d366;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* SECTIONS */
+.section {
+  padding: 70px 20px;
+}
+
+.section-primary {
+  background: #111;
+  color: #fff;
+}
+
+.section-secondary {
+  background: #f7f7f7;
+}
+
+.section-tertiary {
+  background: #fff;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* CARDS CONTAINER */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* CARD BASE */
+.card {
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* Cards que llevan imagen y anulan la de arriba */
+.card-primary,
+.card-secondary {
+  padding: 0; /* IMPORTANTE: la imagen necesita espacio limpio */
+  overflow: hidden;
+}
+
+/* Estilo comun de la imagen CARD */
+.card-media {
+  width: 100%;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* CARD JERARQUÍA */
+
+/* 🔥 PRIMARIO */
+/* 🔥 PRIMARIO */
+.card-primary {
+  background: linear-gradient(180deg, #1e90ff, #0b3c5d);
+  color: white;
+  width: 320px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Imagen dominante */
+.card-primary .card-media {
+  height: 65%;           /* jerarquía visual */
+  min-height: 240px;
+}
+
+/* Contenido */
+.card-primary .card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* ⭐ SECUNDARIO */
+.card-secondary {
+  background: white;
+  width: 280px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Imagen equilibrada */
+.card-secondary .card-media {
+  height: 45%;
+  min-height: 180px;
+}
+
+/* Contenido */
+.card-secondary .card-content {
+  padding: 18px;
+  text-align: left;
+}
+
+/* ➕ TERCIARIO */
+.card-tertiary {
+  background: #fafafa;
+  width: 260px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  border: 1px solid #ddd;
+}
+
+.card-tertiary .card-icon img { /*icono de la card*/
+  width: 48px;
+  margin-bottom: 12px;
+}
+
+/* CONFIANZA */
+.section-confidence {
+  background: #0b3c5d;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}
