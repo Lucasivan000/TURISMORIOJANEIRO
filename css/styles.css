@@ -399,6 +399,7 @@ li>ul {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
 }
 
 .experience-slider .slide {
@@ -483,7 +484,8 @@ li>ul {
 
 .section-experiencias .experience-slider {
     position: relative;
-    margin: 30px 0;
+    margin: 30px auto;
+    /* ✅ auto, no 0 */
     overflow: hidden;
     border-radius: 10px;
 }
@@ -499,7 +501,8 @@ li>ul {
 
 .section-experiencias .experience-slider img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    /* ✅ no auto */
     display: block;
     object-fit: cover;
     border-radius: 10px;
