@@ -284,6 +284,18 @@
     padding: 20px;
     text-align: center;
 }
+/* Imagen dominante */
+.card-primary .card-media {
+    height: 240px;         /* altura fija */
+    overflow: hidden;      /* recorta lo que se salga del contenedor */
+}
+
+.card-primary .card-media img {
+    width: 100%;           /* ocupa todo el ancho */
+    height: 100%;          /* ocupa toda la altura del contenedor */
+    object-fit: cover;     /* recorta o ajusta la imagen sin deformarla */
+    display: block;        /* elimina espacio debajo de la imagen */
+}
 
 
 /* ⭐ SECUNDARIO */
