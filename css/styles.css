@@ -5,6 +5,12 @@
     box-sizing: border-box;
     font-family: system-ui, sans-serif;
 }
+/* separacion de listas generales*/
+li > ul {
+  margin-top: 10px;   /* separa la sublista del texto del LI padre */
+  margin-left: 20px; /* indentación para la sublista */
+  padding-left: 0;   /* opcional, para evitar doble indentación en algunos navegadores */
+}
 
 /* NAVBAR */
 .navbar {
@@ -40,8 +46,9 @@
 .nav-muted {
     opacity: 0.6;
 }
+
 .logo {
-    color:white;
+    color: white;
 }
 
 /* =====================
@@ -118,20 +125,26 @@
    CTA WHATSAPP
 ===================== */
 .btn-whatsapp {
-    display: inline-block;
-    background: #25d366;
-    color: #fff;
-    padding: 16px 28px;
-    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* espacio entre ícono y texto */
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .btn-whatsapp:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background-color: #1ebe57;
+}
+
+.btn-whatsapp .icon {
+    width: 20px;
+    height: 20px;
 }
 
 /* =====================
