@@ -1,123 +1,258 @@
 /* RESET */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
 }
 
 /* NAVBAR */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
-  background: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #000;
+    margin-left: 15px;
+    text-decoration: none;
+    color: #000;
 }
 
-.nav-main { font-weight: 700; }
-.nav-muted { opacity: 0.6; }
+.nav-main {
+    font-weight: 700;
+}
 
-/* HERO */
+.nav-muted {
+    opacity: 0.6;
+}
+
+/* =====================
+   HERO
+===================== */
 .hero {
-  min-height: 80vh;
-  background-image: url("hero-rio.jpg");
-  color: #5ae049;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* =====================
+   SLIDER
+===================== */
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* =====================
+   OVERLAY (contraste texto)
+===================== */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.65));
+    z-index: 2;
+}
+
+/* =====================
+   CONTENIDO
+===================== */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 0 20px;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
 }
 
 .hero p {
-  margin: 20px 0;
-  font-size: 1.2rem;
+    margin: 20px 0 30px;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    opacity: 0.95;
 }
 
+/* =====================
+   CTA WHATSAPP
+===================== */
 .btn-whatsapp {
-  display: inline-block;
-  background: #25d366;
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 700;
+    display: inline-block;
+    background: #25d366;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================
+   FLECHAS (UX DISCRETO)
+===================== */
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, opacity 0.2s ease;
+    opacity: 0.75;
+}
+
+.hero-nav:hover {
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 1;
+}
+
+.hero-nav.prev {
+    left: 20px;
+}
+
+.hero-nav.next {
+    right: 20px;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 1.5rem;
+    }
+
+    .hero-nav.prev {
+        left: 10px;
+    }
+
+    .hero-nav.next {
+        right: 10px;
+    }
+}
+
+
 
 /* SECTIONS */
 .section {
-  padding: 70px 20px;
+    padding: 70px 20px;
 }
 
 .section-primary {
-  background: #111;
-  color: #fff;
+    background: #111;
+    color: #fff;
 }
 
 .section-secondary {
-  background: #f7f7f7;
+    background: #f7f7f7;
 }
 
 .section-tertiary {
-  background: #fff;
+    background: #fff;
 }
 
 .section h2 {
-  text-align: center;
-  margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 /* CARDS CONTAINER */
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
 }
 
 /* CARD BASE */
 .card {
-  padding: 40px 20px;
-  border-radius: 16px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s;
+    padding: 40px 20px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
 /* Cards que llevan imagen y anulan la de arriba */
 .card-primary,
 .card-secondary {
-  padding: 0; /* IMPORTANTE: la imagen necesita espacio limpio */
-  overflow: hidden;
+    padding: 0;
+    /* IMPORTANTE: la imagen necesita espacio limpio */
+    overflow: hidden;
 }
 
 /* Estilo comun de la imagen CARD */
 .card-media {
-  width: 100%;
+    width: 100%;
 }
 
 .card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 /* CARD JERARQUÍA */
@@ -125,72 +260,74 @@
 /* 🔥 PRIMARIO */
 /* 🔥 PRIMARIO */
 .card-primary {
-  background: linear-gradient(180deg, #1e90ff, #0b3c5d);
-  color: white;
-  width: 320px;
-  font-weight: 700;
-  font-size: 1.2rem;
+    background: linear-gradient(180deg, #1e90ff, #0b3c5d);
+    color: white;
+    width: 320px;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 /* Imagen dominante */
 .card-primary .card-media {
-  height: 65%;           /* jerarquía visual */
-  min-height: 240px;
+    height: 65%;
+    /* jerarquía visual */
+    min-height: 240px;
 }
 
 /* Contenido */
 .card-primary .card-content {
-  padding: 20px;
-  text-align: center;
+    padding: 20px;
+    text-align: center;
 }
 
 
 /* ⭐ SECUNDARIO */
 .card-secondary {
-  background: white;
-  width: 280px;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: white;
+    width: 280px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Imagen equilibrada */
 .card-secondary .card-media {
-  height: 45%;
-  min-height: 180px;
+    height: 45%;
+    min-height: 180px;
 }
 
 /* Contenido */
 .card-secondary .card-content {
-  padding: 18px;
-  text-align: left;
+    padding: 18px;
+    text-align: left;
 }
 
 /* ➕ TERCIARIO */
 .card-tertiary {
-  background: #fafafa;
-  width: 260px;
-  font-size: 0.95rem;
-  opacity: 0.8;
-  border: 1px solid #ddd;
+    background: #fafafa;
+    width: 260px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    border: 1px solid #ddd;
 }
 
-.card-tertiary .card-icon img { /*icono de la card*/
-  width: 48px;
-  margin-bottom: 12px;
+.card-tertiary .card-icon img {
+    /*icono de la card*/
+    width: 48px;
+    margin-bottom: 12px;
 }
 
 /* CONFIANZA */
 .section-confidence {
-  background: #0b3c5d;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
+    background: #0b3c5d;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
 }
 
 /* FOOTER */
 .footer {
-  background: #000;
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
+    background: #000;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
 }

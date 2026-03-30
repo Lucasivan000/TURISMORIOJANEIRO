@@ -24,11 +24,24 @@
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-slider">
+
+            <div class="hero-slide active" style="background-image: url('hero-1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('hero-2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('hero-3.jpg');"></div>
+
+        </div>
+
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <h1>Viví Río como nunca antes</h1>
             <p>Experiencias, tours y fiestas con atención en español</p>
             <a class="btn-whatsapp" href="#">Hablar por WhatsApp</a>
         </div>
+
+        <button class="hero-nav prev" aria-label="Imagen anterior">‹</button>
+        <button class="hero-nav next" aria-label="Imagen siguiente">›</button>
     </section>
 
     <main>
@@ -436,6 +449,7 @@
     <footer class="footer">
         <p>© 2026 Río Experiencias · Atención por WhatsApp</p>
     </footer>
+    <script src="./JS/main.js"></script>
 
 </body>
 
