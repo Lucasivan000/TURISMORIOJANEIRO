@@ -48,7 +48,7 @@
             <a href="#paracaidas" class="card-link">
                 <article class="card card-primary">
                     <div class="card-media">
-                        <img src="../images/paracaidas-rio.jpg" alt="Salto en paracaídas en Río de Janeiro">
+                        <img src="../assets/prueba3.jpg" alt="Salto en paracaídas en Río de Janeiro">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Salto en Paracaídas VIP + Helicóptero</h3>
@@ -61,7 +61,7 @@
             <a href="#parapente" class="card-link">
                 <article class="card card-primary">
                     <div class="card-media">
-                        <img src="../images/parapente-rio.jpg" alt="Parapente sobre Río de Janeiro">
+                        <img src="../assets/prueba3.jpg" alt="Parapente sobre Río de Janeiro">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Parapente sobre Río de Janeiro</h3>
@@ -74,7 +74,7 @@
             <a href="#helicoptero" class="card-link">
                 <article class="card card-primary">
                     <div class="card-media">
-                        <img src="../images/helicoptero-rio.jpg" alt="Paseo en helicóptero en Río de Janeiro">
+                        <img src="../assets/prueba1.jpg" alt="Paseo en helicóptero en Río de Janeiro">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Paseo en Helicóptero por Río de Janeiro</h3>
@@ -112,13 +112,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/paracaidas1.jpg" alt="Salto en paracaídas 1">
+                <img src="../assets/prueba1.jpg" alt="Salto en paracaídas 1">
             </div>
             <div class="slide">
-                <img src="../images/paracaidas2.jpg" alt="Salto en paracaídas 2">
+                <img src="../assets/prueba2.jpg" alt="Salto en paracaídas 2">
             </div>
             <div class="slide">
-                <img src="../images/paracaidas3.jpg" alt="Salto en paracaídas 3">
+                <img src="../assets/prueba3.jpg" alt="Salto en paracaídas 3">
             </div>
 
             <!-- Flechas -->
@@ -148,13 +148,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/paracaidas1.jpg" alt="Salto en paracaídas 1">
+                <img src="../assets/prueba1.jpg" alt="Salto en paracaídas 1">
             </div>
             <div class="slide">
-                <img src="../images/paracaidas2.jpg" alt="Salto en paracaídas 2">
+                <img src="../assets/prueba3.jpg" alt="Salto en paracaídas 2">
             </div>
             <div class="slide">
-                <img src="../images/paracaidas3.jpg" alt="Salto en paracaídas 3">
+                <img src="../assets/prueba2.jpg" alt="Salto en paracaídas 3">
             </div>
 
             <!-- Flechas -->
@@ -212,13 +212,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/paracaidas1.jpg" alt="Salto en paracaídas 1">
+                <img src="../assets/prueba1.jpg" alt="Salto en paracaídas 1">
             </div>
             <div class="slide">
-                <img src="../images/paracaidas2.jpg" alt="Salto en paracaídas 2">
+                <img src="../assets/prueba2.jpg" alt="Salto en paracaídas 2">
             </div>
             <div class="slide">
-                <img src="../images/paracaidas3.jpg" alt="Salto en paracaídas 3">
+                <img src="../assets/prueba3.jpg" alt="Salto en paracaídas 3">
             </div>
 
             <!-- Flechas -->
@@ -234,6 +234,30 @@
     <footer class="footer">
         <p>&copy; 2026 Turismo Río | Todos los derechos reservados</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.experience-slider').forEach(slider => {
+                const slides = slider.querySelectorAll('.slide');
+                const prev = slider.querySelector('.slide-nav.prev');
+                const next = slider.querySelector('.slide-nav.next');
+                let current = 0;
+
+                function showSlide(index) {
+                    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+                }
+
+                prev.addEventListener('click', () => {
+                    current = (current - 1 + slides.length) % slides.length;
+                    showSlide(current);
+                });
+
+                next.addEventListener('click', () => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                });
+            });
+        });
+    </script>
 
 </body>
 

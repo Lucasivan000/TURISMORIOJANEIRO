@@ -48,7 +48,7 @@
             <a href="#arraial" class="card-link">
                 <article class="card card-primary">
                     <div class="card-media">
-                        <img src="../images/paracaidas-rio.jpg" alt="Salto en paracaídas en Río de Janeiro">
+                        <img src="../assets/prueba2.jpg" alt="Salto en paracaídas en Río de Janeiro">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">TOUR ARRAIAL DO CABO</h3>
@@ -61,7 +61,7 @@
             <a href="#angra" class="card-link">
                 <article class="card card-primary">
                     <div class="card-media">
-                        <img src="../images/parapente-rio.jpg" alt="Parapente sobre Río de Janeiro">
+                        <img src="../assets/prueba2.jpg" alt="Parapente sobre Río de Janeiro">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Tour Angra dos Reís é Isla Grande</h3>
@@ -74,7 +74,7 @@
             <a href="#buzios" class="card-link">
                 <article class="card card-primary">
                     <div class="card-media">
-                        <img src="../images/helicoptero-rio.jpg" alt="Paseo en helicóptero en Río de Janeiro">
+                        <img src="../assets/prueba3.jpg" alt="Paseo en helicóptero en Río de Janeiro">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">BUZIOS PREMIUM CATAMARÃ </h3>
@@ -125,13 +125,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/arraial1.jpg" alt="Vista del Tour Arraial do Cabo 1">
+                <img src="../assets/prueba3.jpg" alt="Vista del Tour Arraial do Cabo 1">
             </div>
             <div class="slide">
-                <img src="../images/arraial2.jpg" alt="Vista del Tour Arraial do Cabo 2">
+                <img src="../assets/prueba2.jpg" alt="Vista del Tour Arraial do Cabo 2">
             </div>
             <div class="slide">
-                <img src="../images/arraial3.jpg" alt="Vista del Tour Arraial do Cabo 3">
+                <img src="../assets/prueba1.jpg" alt="Vista del Tour Arraial do Cabo 3">
             </div>
 
             <!-- Flechas -->
@@ -172,13 +172,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/angra1.jpg" alt="Vista del tour Angra dos Reis 1">
+                <img src="../assets/prueba2.jpg" alt="Vista del tour Angra dos Reis 1">
             </div>
             <div class="slide">
-                <img src="../images/angra2.jpg" alt="Vista del tour Angra dos Reis 2">
+                <img src="../assets/prueba1.jpg" alt="Vista del tour Angra dos Reis 2">
             </div>
             <div class="slide">
-                <img src="../images/angra3.jpg" alt="Vista del tour Angra dos Reis 3">
+                <img src="../assets/prueba3.jpg" alt="Vista del tour Angra dos Reis 3">
             </div>
 
             <!-- Flechas -->
@@ -236,13 +236,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/buzios1.jpg" alt="Catamarán en Búzios - Playa de Armação">
+                <img src="../assets/prueba1.jpg" alt="Catamarán en Búzios - Playa de Armação">
             </div>
             <div class="slide">
-                <img src="../images/buzios2.jpg" alt="Catamarán en Búzios - Playa Azeda">
+                <img src="../assets/prueba2.jpg" alt="Catamarán en Búzios - Playa Azeda">
             </div>
             <div class="slide">
-                <img src="../images/buzios3.jpg" alt="Catamarán en Búzios - Playa de João Fernandez">
+                <img src="../assets/prueba3.jpg" alt="Catamarán en Búzios - Playa de João Fernandez">
             </div>
 
             <!-- Flechas -->
@@ -258,6 +258,30 @@
     <footer class="footer">
         <p>&copy; 2026 Turismo Río | Todos los derechos reservados</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.experience-slider').forEach(slider => {
+                const slides = slider.querySelectorAll('.slide');
+                const prev = slider.querySelector('.slide-nav.prev');
+                const next = slider.querySelector('.slide-nav.next');
+                let current = 0;
+
+                function showSlide(index) {
+                    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+                }
+
+                prev.addEventListener('click', () => {
+                    current = (current - 1 + slides.length) % slides.length;
+                    showSlide(current);
+                });
+
+                next.addEventListener('click', () => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                });
+            });
+        });
+    </script>
 
 </body>
 

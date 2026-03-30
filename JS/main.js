@@ -24,8 +24,8 @@ nextBtn.addEventListener('click', () => {
 // control de expericencias
 document.querySelectorAll('.experience-slider').forEach(slider => {
   const slides = slider.querySelectorAll('.slide');
-  const prev = slider.querySelector('.prev');
-  const next = slider.querySelector('.next');
+  const prev = slider.querySelector('.slide-nav.prev'); // <--- así lo encuentra
+  const next = slider.querySelector('.slide-nav.next'); // <--- así lo encuentra
   let current = 0;
 
   function showSlide(index) {

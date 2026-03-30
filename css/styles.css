@@ -5,11 +5,15 @@
     box-sizing: border-box;
     font-family: system-ui, sans-serif;
 }
+
 /* separacion de listas generales*/
-li > ul {
-  margin-top: 10px;   /* separa la sublista del texto del LI padre */
-  margin-left: 20px; /* indentación para la sublista */
-  padding-left: 0;   /* opcional, para evitar doble indentación en algunos navegadores */
+li>ul {
+    margin-top: 10px;
+    /* separa la sublista del texto del LI padre */
+    margin-left: 20px;
+    /* indentación para la sublista */
+    padding-left: 0;
+    /* opcional, para evitar doble indentación en algunos navegadores */
 }
 
 /* NAVBAR */
@@ -386,8 +390,12 @@ li > ul {
 /* PAGINA EXPERIENCIAS ACOPLaNDO CSS VIGENTE */
 .experience-slider {
     position: relative;
-    max-width: 800px;
-    margin: 20px auto;
+    width: 800px;
+    /* ancho fijo del slider */
+    height: 450px;
+    /* altura fija */
+    margin: 0 auto;
+    /* centra horizontalmente en la página */
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -395,6 +403,8 @@ li > ul {
 
 .experience-slider .slide {
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 .experience-slider .slide.active {
@@ -403,11 +413,15 @@ li > ul {
 
 .experience-slider img {
     width: 100%;
-    height: 450px;
+    height: 100%;
     object-fit: cover;
+    /* recorta la imagen si es necesario */
+    object-position: center;
+    /* mantiene la imagen centrada */
     border-radius: 15px;
 }
 
+/* Flechas de navegación */
 .slide-nav {
     position: absolute;
     top: 50%;
@@ -419,6 +433,7 @@ li > ul {
     padding: 5px 15px;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 10;
 }
 
 .slide-nav.prev {
@@ -512,16 +527,17 @@ li > ul {
 }
 
 .section-experiencias .btn-whatsapp {
-    display: inline-block;
+    display: table;
+    /* permite centrar con margin auto */
+    margin: 20px auto 0;
+    /* centrado horizontal, separacion arriba */
     background: #25d366;
     color: #fff;
     padding: 15px 30px;
     border-radius: 30px;
-    text-decoration: none;
     font-weight: 700;
+    text-decoration: none;
     text-align: center;
-    margin: 20px auto 0;
-    display: block;
     transition: 0.3s;
 }
 

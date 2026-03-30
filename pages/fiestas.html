@@ -99,13 +99,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/angra1.jpg" alt="Vista del tour Angra dos Reis 1">
+                <img src="../assets/prueba3.jpg" alt="Vista del tour Angra dos Reis 1">
             </div>
             <div class="slide">
-                <img src="../images/angra2.jpg" alt="Vista del tour Angra dos Reis 2">
+                <img src="../assets/prueba1.jpg" alt="Vista del tour Angra dos Reis 2">
             </div>
             <div class="slide">
-                <img src="../images/angra3.jpg" alt="Vista del tour Angra dos Reis 3">
+                <img src="../assets/prueba2.jpg" alt="Vista del tour Angra dos Reis 3">
             </div>
 
             <!-- Flechas -->
@@ -139,13 +139,13 @@
         <!-- Mini slider de imágenes -->
         <div class="experience-slider">
             <div class="slide active">
-                <img src="../images/buzios1.jpg" alt="Catamarán en Búzios - Playa de Armação">
+                <img src="../assets/prueba2.jpg" alt="Catamarán en Búzios - Playa de Armação">
             </div>
             <div class="slide">
-                <img src="../images/buzios2.jpg" alt="Catamarán en Búzios - Playa Azeda">
+                <img src="../assets/prueba3.jpg" alt="Catamarán en Búzios - Playa Azeda">
             </div>
             <div class="slide">
-                <img src="../images/buzios3.jpg" alt="Catamarán en Búzios - Playa de João Fernandez">
+                <img src="../assets/prueba1.jpg" alt="Catamarán en Búzios - Playa de João Fernandez">
             </div>
 
             <!-- Flechas -->
@@ -161,6 +161,30 @@
     <footer class="footer">
         <p>&copy; 2026 Turismo Río | Todos los derechos reservados</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.experience-slider').forEach(slider => {
+                const slides = slider.querySelectorAll('.slide');
+                const prev = slider.querySelector('.slide-nav.prev');
+                const next = slider.querySelector('.slide-nav.next');
+                let current = 0;
+
+                function showSlide(index) {
+                    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+                }
+
+                prev.addEventListener('click', () => {
+                    current = (current - 1 + slides.length) % slides.length;
+                    showSlide(current);
+                });
+
+                next.addEventListener('click', () => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                });
+            });
+        });
+    </script>
 
 </body>
 
