@@ -254,8 +254,34 @@ h2 {
     color: #fff;
 }
 
+.section-primary h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    text-shadow:
+        2px 2px 4px rgba(255, 255, 255, 0.123),
+        /* sombra principal */
+        0 0 10px rgba(253, 253, 253, 0.021);
+    /* resplandor azul */
+
+}
+
 .section-secondary {
     background: #f7f7f7;
+}
+
+.section-secondary h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.4),
+        /* sombra principal */
+        0 0 10px rgba(30, 143, 255, 0.041);
+    /* resplandor azul */
+
 }
 
 .section-tertiary {
