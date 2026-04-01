@@ -49,7 +49,7 @@ h2 {
 }
 
 .nav-main {
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .nav-muted {
@@ -57,7 +57,25 @@ h2 {
 }
 
 .logo {
-    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* espacio entre logo y texto */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    /* o el color que uses para tu navbar */
+}
+
+.logo-img {
+    width: 50px;
+    /* ajusta el tamaño deseado */
+    height: 50px;
+    /* lo mismo que width para que sea un círculo perfecto */
+    border-radius: 50%;
+    /* hace que sea circular */
+    object-fit: cover;
+    /* asegura que la imagen llene el círculo sin deformarse */
 }
 
 /* =====================
@@ -258,6 +276,40 @@ h2 {
     border-radius: 20px;
 }
 
+.fondoSectionDestacadaUno {
+    /* Degradado vertical: arriba celeste pastel, abajo casi blanco */
+    background: linear-gradient(to bottom, #c8ecfa, #f7f7f7);
+    padding: 60px 20px;
+    /* separaciones internas, opcional */
+}
+
+.fondoSectionDestacadaDos {
+    position: relative;
+    background: url('../assets/fiestaplayafondo.jpg') center/cover no-repeat;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Overlay solo sobre el fondo */
+.fondoSectionDestacadaDos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.6);
+    /* oscuro sobre el fondo */
+    z-index: 1;
+    /* overlay por debajo del contenido */
+}
+
+/* Contenedor del contenido / cards */
+.fondoSectionDestacadaDos .content {
+    position: relative;
+    z-index: 2;
+    /* por encima del overlay */
+    color: #fff;
+}
+
+
 
 /* CARDS CONTAINER */
 .cards {
@@ -288,6 +340,37 @@ h2 {
     text-decoration: none;
     color: inherit;
     display: block;
+}
+
+/* Flecha indicadora */
+.card-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    /* separa de precio */
+    color: #fff176;
+    /* naranja pastel, tu color destacado */
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar el mouse en desktop */
+.card:hover .card-arrow {
+    transform: translateX(5px);
+    /* mueve un poco la flecha a la derecha */
+}
+
+.card:active {
+    transform: scale(0.98);
+    /* efecto presión */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Solo en móvil también se ve bien */
+@media (max-width: 768px) {
+    .card-arrow {
+        font-size: 1.3rem;
+    }
 }
 
 /* Estilo comun de la imagen CARD */
@@ -411,6 +494,154 @@ h2 {
     /*icono de la card*/
     width: 48px;
     margin-bottom: 12px;
+}
+
+/* card fistas */
+
+/* ===== Sección Fiestas ===== */
+.fondoSectionDestacadaDos {
+    position: relative;
+    background: url('../assets/fiestaplayafondo.jpg') center/cover no-repeat;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Overlay oscuro solo sobre el fondo */
+.fondoSectionDestacadaDos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.7);
+    z-index: 1;
+    /* debajo del contenido */
+}
+
+/* Contenedor de todo el contenido */
+.fondoSectionDestacadaDos .card {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* espacio entre cards */
+    flex-wrap: wrap;
+    /* responsive */
+    margin-top: 40px;
+}
+
+/* ==== Cards Fiestas ==== */
+.card-fiestas,
+.card-fiestasFiestas {
+    width: 700px;
+    /* ancho apaisado */
+    aspect-ratio: 14/7;
+    /* apaisado */
+    background: linear-gradient(180deg, #1e90ff, #0b3c5d);
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    /* imagen a la izquierda, contenido a la derecha */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Hover */
+.card-fiestas:hover,
+.card-fiestasFiestas:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagen de la card */
+.card-mediaFiestas {
+    flex: 33;
+    overflow: hidden;
+}
+
+.card-mediaFiestas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenido de la card */
+.card-contentFiestas {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Titulo y precio */
+.card-titleFiestas {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-priceFiestas {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Flecha de acción */
+.card-arrowFiestas {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    /* amarillo brillante */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* ==== Links de las cards ==== */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 1000px) {
+
+    .card-fiestas,
+    .card-fiestasFiestas {
+        flex-direction: column;
+        /* imagen arriba, contenido abajo */
+        width: 90%;
+        aspect-ratio: auto;
+    }
+
+    .card-arrowFiestas {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fondoSectionDestacadaDos {
+        padding: 60px 10px;
+    }
+
+    .card-titleFiestas {
+        font-size: 1.3rem;
+    }
+
+    .card-priceFiestas {
+        font-size: 1rem;
+    }
+
+    .card-arrowFiestas {
+        font-size: 1.2rem;
+    }
 }
 
 /* CONFIANZA */
