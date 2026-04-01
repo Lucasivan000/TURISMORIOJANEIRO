@@ -301,6 +301,13 @@ h2 {
     /* overlay por debajo del contenido */
 }
 
+.fondoSectionDestacadaDos h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+
+}
+
 /* Contenedor del contenido / cards */
 .fondoSectionDestacadaDos .content {
     position: relative;
@@ -820,4 +827,85 @@ h2 {
 
 .section-experiencias .btn-whatsapp:hover {
     background: #1ebe57;
+}
+
+/*contacto sction*/
+/* Sección de contacto / reservas */
+.section-contact {
+    background: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+    color: #000;
+}
+
+.section-contact h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de ítems */
+.contact-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Cada ítem de contacto */
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1rem;
+    gap: 8px;
+}
+
+/* Íconos generales */
+.contact-icon {
+    font-size: 2rem;
+    color: #1e90ff;
+    /* azul destacado */
+}
+
+/* Íconos dentro de p */
+.contact-icon-wp,
+.contact-icon-ig {
+    font-size: 1.5rem;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Links de contacto */
+.contact-item a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 650;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #ffd700;
+    /* naranja pastel para resaltar */
+}
+
+.contact-icon-wp {
+    font-size: 30px;
+    color: #2d9e1e;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.contact-icon-ig {
+    font-size: 30px;
+    color: #bd20bd;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-items {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
