@@ -16,6 +16,11 @@ li>ul {
     /* opcional, para evitar doble indentación en algunos navegadores */
 }
 
+/* tipografias */
+h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* NAVBAR */
 .navbar {
     display: flex;
@@ -117,6 +122,7 @@ li>ul {
     font-size: clamp(2.4rem, 5vw, 3.6rem);
     font-weight: 800;
     line-height: 1.1;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero p {
@@ -249,6 +255,7 @@ li>ul {
     background: linear-gradient(180deg,
             #f2f9f5 0%,
             #e3f3ea 100%);
+    border-radius: 20px;
 }
 
 
@@ -303,46 +310,73 @@ li>ul {
 
 /* 🔥 PRIMARIO */
 /* 🔥 PRIMARIO */
+/* Contenedor de tarjetas */
+.cards-grid {
+    display: flex;
+    /* flexbox para alinear tarjetas */
+    flex-wrap: wrap;
+    /* permite varias filas */
+    gap: 20px;
+    /* espacio entre tarjetas */
+    justify-content: center;
+    /* centra las tarjetas */
+}
+
+/* Tarjeta principal */
 .card-primary {
+    width: 400px;
+    /* ancho más grande */
+    aspect-ratio: 4/5;
+    /* mantiene proporción uniforme */
     background: linear-gradient(180deg, #1e90ff, #0b3c5d);
     color: white;
-    width: 320px;
     font-weight: 700;
     font-size: 1.2rem;
-}
-
-/* Imagen dominante */
-.card-primary .card-media {
-    height: 65%;
-    /* jerarquía visual */
-    min-height: 240px;
-}
-
-/* Contenido */
-.card-primary .card-content {
-    padding: 20px;
-    text-align: center;
-}
-
-/* Imagen dominante */
-.card-primary .card-media {
-    height: 240px;
-    /* altura fija */
+    display: flex;
+    flex-direction: column;
+    /* imagen arriba, contenido abajo */
+    border-radius: 16px;
+    /* bordes suaves */
     overflow: hidden;
-    /* recorta lo que se salga del contenedor */
+    /* evita que el contenido se salga */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* sombra ligera */
+    transition: transform 0.3s;
+    /* efecto hover */
+}
+
+.card-primary:hover {
+    transform: translateY(-5px);
+    /* elevación al pasar el mouse */
+}
+
+/* Imagen dominante */
+.card-primary .card-media {
+    flex: 3;
+    /* ocupa más espacio (aprox. 75%) */
+    overflow: hidden;
 }
 
 .card-primary .card-media img {
     width: 100%;
-    /* ocupa todo el ancho */
     height: 100%;
-    /* ocupa toda la altura del contenedor */
     object-fit: cover;
-    /* recorta o ajusta la imagen sin deformarla */
+    /* no deforma la imagen */
     display: block;
-    /* elimina espacio debajo de la imagen */
 }
 
+/* Contenido de la tarjeta */
+.card-primary .card-content {
+    flex: 1;
+    /* ocupa menos espacio (aprox. 25%) */
+    padding: 15px 20px;
+    /* espacio interno suficiente */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* centra verticalmente el texto */
+}
 
 /* ⭐ SECUNDARIO */
 .card-secondary {
@@ -460,7 +494,7 @@ li>ul {
     /* ancho máximo centralizado */
     margin: 60px auto;
     /* separaciones arriba/abajo y centrado horizontal */
-    padding: 0 20px;
+    padding: 20px 20px;
 }
 
 .section-experiencias h3 {
