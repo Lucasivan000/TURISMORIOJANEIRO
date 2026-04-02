@@ -422,6 +422,11 @@ h2 {
     transform: translateY(-5px);
 }
 
+.card-price {
+    color: #C9A24D;
+
+}
+
 /* CARD JERARQUÍA */
 
 /* 🔥 PRIMARIO */
@@ -455,10 +460,13 @@ h2 {
     /* bordes suaves */
     overflow: hidden;
     /* evita que el contenido se salga */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    /* sombra ligera */
     transition: transform 0.3s;
     /* efecto hover */
+    border: 2px solid #1976d2;
+    /* Azul más profundo, premium */
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+    /* Le da impacto */
+    transform: scale(1.05);
 }
 
 .card-primary:hover {
@@ -496,15 +504,19 @@ h2 {
 
 /* ⭐ SECUNDARIO */
 .card-secondary {
-    background: white;
+    background: linear-gradient(180deg, #fafafa, #dedede);
     width: 280px;
     font-weight: 600;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #1e90ff;
+    /* Azul principal de confianza */
+    border-radius: 12px;
+
 }
 
 /* Imagen equilibrada */
 .card-secondary .card-media {
-    height: 45%;
+    height: 65%;
     min-height: 180px;
 }
 
@@ -564,6 +576,22 @@ h2 {
     margin-top: 40px;
 }
 
+.card-linkFiestas {
+    display: inline-block;
+    /* mantiene cada card como bloque clickeable */
+    margin-right: 24px;
+    /* separación horizontal */
+    vertical-align: top;
+    /* evita que se bajen por altura distinta */
+}
+
+.card-linkFiestas:last-child {
+    margin-right: 0;
+    /* quita margen al final de la fila */
+}
+
+
+
 /* ==== Cards Fiestas ==== */
 .card-fiestas,
 .card-fiestasFiestas {
@@ -579,9 +607,13 @@ h2 {
     /* imagen a la izquierda, contenido a la derecha */
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    border: 2px solid #1976d2;
+    /* Azul más profundo, premium */
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+    /* Le da impacto */
+    transform: scale(1.05);
 }
 
 /* Hover */
@@ -623,6 +655,8 @@ h2 {
 .card-priceFiestas {
     font-size: 1.1rem;
     margin-bottom: 10px;
+    color: #C9A24D;
+    ;
 }
 
 /* Flecha de acción */
@@ -635,12 +669,8 @@ h2 {
     right: 20px;
 }
 
-/* ==== Links de las cards ==== */
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+
+
 
 /* ==== Responsive ==== */
 @media (max-width: 1000px) {
