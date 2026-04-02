@@ -936,20 +936,7 @@ h2 {
     gap: 8px;
 }
 
-/* Íconos generales */
-.contact-icon {
-    font-size: 2rem;
-    color: #1e90ff;
-    /* azul destacado */
-}
 
-/* Íconos dentro de p */
-.contact-icon-wp,
-.contact-icon-ig {
-    font-size: 1.5rem;
-    margin-right: 6px;
-    vertical-align: middle;
-}
 
 /* Links de contacto */
 .contact-item a {
@@ -965,14 +952,14 @@ h2 {
 }
 
 .contact-icon-wp {
-    font-size: 30px;
+    font-size: 36px;
     color: #2d9e1e;
     margin-right: 8px;
     vertical-align: middle;
 }
 
 .contact-icon-ig {
-    font-size: 30px;
+    font-size: 36px;
     color: #bd20bd;
     margin-right: 8px;
     vertical-align: middle;
