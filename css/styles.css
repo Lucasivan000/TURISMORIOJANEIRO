@@ -249,6 +249,23 @@ h2 {
     padding: 70px 20px;
 }
 
+.subtitle-section {
+    font-size: 1.5rem;
+    /* tamaño más pequeño que el h2 */
+    color: #555555;
+    /* gris oscuro suave, no negro */
+    line-height: 1.5;
+    /* espacio entre líneas cómodo */
+    margin-top: 0.5rem;
+    /* espacio sobre el subtítulo */
+    margin-bottom: 1rem;
+    /* espacio debajo para separar de las cards */
+    text-align: center;
+    /* centrado debajo del título */
+    font-weight: 400;
+    /* normal, no tan pesado */
+}
+
 .section-primary {
     background: #111;
     color: #fff;
@@ -276,12 +293,17 @@ h2 {
     margin-bottom: 40px;
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
+    color: #1e1e1e; /* gris oscuro para buena lectura */
     text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.4),
-        /* sombra principal */
-        0 0 10px rgba(30, 143, 255, 0.041);
-    /* resplandor azul */
+        2px 2px 4px rgba(30,144,255,0.2), /* resplandor azul */
+        0 0 8px rgba(30,144,255,0.15);     /* segundo resplandor más suave */
+}
 
+/* Responsive para tablets/móviles */
+@media (max-width: 768px) {
+    .section-secondary h2 {
+        font-size: 1.5rem;
+    }
 }
 
 .section-tertiary {
@@ -589,8 +611,6 @@ h2 {
     margin-right: 0;
     /* quita margen al final de la fila */
 }
-
-
 
 /* ==== Cards Fiestas ==== */
 .card-fiestas,
